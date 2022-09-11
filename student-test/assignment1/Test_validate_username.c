@@ -18,5 +18,11 @@ void test_validate_my_username()
      * TODO: Replace the line below with your code here as described above to verify your /conf/username.txt 
      * config file and my_username() functions are setup properly
      */
-    TEST_ASSERT_TRUE_MESSAGE(false,"AESD students, please fix me!");
+  char name1[11];
+  char name2[11];
+  strncpy(name1, my_username(), 11);
+  strncpy(name2, malloc_username_from_conf_file(), 11);
+
+  TEST_ASSERT_EQUAL_STRING_MESSAGE(name1, name2, "chk String equality");    
+
 }
